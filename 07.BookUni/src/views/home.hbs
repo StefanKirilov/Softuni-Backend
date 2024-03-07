@@ -1,0 +1,30 @@
+<section id="viewCatalog" class="background-img">
+    {{#if haveHotel}}
+    <div class="added-hotels">
+        {{#if isAuthenticated}}
+        {{#each hotels}}
+        <a href="/hotels/{{_id}}/details" class="added-hotel">
+            <img src="{{image}}" alt="" class="picture-added-hotel">
+            <h3>{{name}}</h3>
+            <span>Free rooms: {{freeRooms}}</span>
+        </a>
+        {{/each}}
+        {{else}}
+        {{#each hotels}}
+        <a href="/users/login" class="added-hotel">
+            <img src="{{image}}" alt="" class="picture-added-hotel">
+            <h3>{{name}}</h3>
+            <span>Free rooms: {{freeRooms}}</span>
+        </a>
+        {{/each}}
+        {{/if}}
+    </div>
+    {{else}}
+    <div class="guest">
+        There are no Hotels found...
+    </div>
+    {{/if}}
+</section>
+</body>
+
+</html>

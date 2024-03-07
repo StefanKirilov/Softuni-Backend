@@ -1,0 +1,18 @@
+<!-- Starts Main Section -->
+<main>
+
+    <section id="all-course-page">
+        <article class="all-course-title">
+            <h1>All Courses</h1>
+        </article>
+        <!-- Start Pet Photos Post Section -->
+        {{#each courses}}
+        {{>card}}
+        {{else}}
+        <!--If there are no photo yet!-->
+        <article class="not-available-courses">
+            <h1>No course created yet.</h1>
+        </article>
+        {{/each}}
+    </section>
+</main>

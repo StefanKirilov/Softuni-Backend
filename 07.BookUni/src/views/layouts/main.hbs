@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BookingUni</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div id="container">
+        <div>
+            {{#if error}}
+            <div class="notification loadingBox">
+                {{error}}
+            </div>
+            {{/if}}
+        </div>
+
+        <nav>
+            <div class="left-container">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    {{#if isAuthenticated}}
+                    <li><a href="/hotels/create">Add +</a></li>
+                    {{else}}
+                    <li><a href="/users/login">Login</a></li>
+                    <li><a href="/users/register">Register</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+            {{#if isAuthenticated}}
+            <div class="right-container">
+                <a href="/profile" class="log-out">{{user.username}}</a>
+                <a href="/users/logout" class="log-out">Logout</a>
+            </div>
+            {{/if}}
+        </nav>
+
+        {{{body}}}
+
+        <!-- Starts Footer Section -->
+        <footer>@SoftUni - JS Back-end - BookingUni 2020</footer>
+    </div>

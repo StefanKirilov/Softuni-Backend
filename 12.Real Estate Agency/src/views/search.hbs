@@ -1,0 +1,21 @@
+<main>
+    <form class="search" method="POST">
+        <input type="search" name="search" placeholder="Search here...">
+        <button type="submit">Search</button>
+    </form>
+    <section id="find-section">
+
+        {{#each houses}}
+        <div class="card">
+            <h3>{{name}}</h3>
+            <p>{{description}}</p>
+            <div class="cta-container"><a href="/houses/{{_id}}/details" class="det-link">Details</a></div>
+            <div class="card_circle"><img src="{{image}}"></div>
+        </div>
+        {{else}}
+        <div class="no-data-listing">
+            <p class="no-offer">No match was found for the submitted type...</p>
+        </div>
+        {{/each}}
+    </section>
+</main>

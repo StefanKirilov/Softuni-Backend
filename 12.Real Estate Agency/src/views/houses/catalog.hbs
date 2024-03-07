@@ -1,0 +1,21 @@
+<main>
+
+    <section id="all-listings">
+        <h1>Apartments for recents</h1>
+        <!-- If there are offers for housing in the database display each of them -->
+        {{#each houses}}
+        <div class="card">
+            <h3>{{name}}</h3>
+            <p>{{description}}</p>
+
+            <div class="cta-container"><a href="/houses/{{_id}}/details" class="det-link">Details</a></div>
+            <div class="card_circle"><img src="{{image}}"></div>
+
+        </div>
+        {{else}}
+        <div class="no-data-listing">
+            <p class="no-offer">There are no housing offers found...</p>
+        </div>
+        {{/each}}
+    </section>
+</main>
